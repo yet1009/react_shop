@@ -31,7 +31,7 @@ const initialState = {
 
 
 
-export const produtsSlice = createSlice({
+export const productsSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {},
@@ -50,4 +50,4 @@ export const produtsSlice = createSlice({
 
 })
 
-export default produtsSlice.reducer
+export default productsSlice.reducer

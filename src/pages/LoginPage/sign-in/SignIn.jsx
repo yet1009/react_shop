@@ -5,6 +5,7 @@ import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setUser} from "../../../store/user/user.slice.js";
+import {setUserId} from "../../../store/cart/cart.slice.js";
 
 
 const SignIn = () => {
@@ -21,6 +22,7 @@ const SignIn = () => {
                 token: userCredential.user.refreshToken,
                 id: userCredential.user.uid
             }))
+            dispatch(setUserId(userCredential.user.uid))
             navigate('/')
         }).catch(err => {
             return err && setFirebaseError('이메일 또는 비밀번호가 잘못되었습니다.')
